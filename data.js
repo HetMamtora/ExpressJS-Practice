@@ -39,7 +39,13 @@ const phones = [
         id:7,
         name:'Oppo',
         image:'https://d2xamzlzrdbdbn.cloudfront.net/products/138ce865-764a-402f-9464-da38dac7deda23081117.jpg',
-        price:8000,
+        price:9000,
+    },
+    {
+        id:8,
+        name:'Vivo',
+        image:'https://d2xamzlzrdbdbn.cloudfront.net/products/138ce865-764a-402f-9464-da38dac7deda23081117.jpg',
+        price:10000,
     },
 ]
 
