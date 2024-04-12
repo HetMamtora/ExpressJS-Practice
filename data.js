@@ -29,6 +29,12 @@ const phones = [
         image:'https://d2xamzlzrdbdbn.cloudfront.net/products/138ce865-764a-402f-9464-da38dac7deda23081117.jpg',
         price:7000,
     },
+    {
+        id:6,
+        name:'Huawei',
+        image:'https://d2xamzlzrdbdbn.cloudfront.net/products/138ce865-764a-402f-9464-da38dac7deda23081117.jpg',
+        price:8000,
+    },
 ]
 
 //module.exports = {phones};
