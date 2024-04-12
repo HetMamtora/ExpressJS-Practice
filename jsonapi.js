@@ -8,7 +8,8 @@ app.get('/',(req,res) => {
     res.send('<h1>Home Page</h1> <a href="api/phones">Phones</a>')
 })
 
-app.get('/api/phones',(req,res) => {
+// JSON-API
+/*app.get('/api/phones',(req,res) => {
     //res.json(phones);
 
     const newItem = phones.map((product) => {
@@ -16,6 +17,18 @@ app.get('/api/phones',(req,res) => {
         return{id,name,image};
     })
     res.json(newItem);
+})*/
+
+//USING PARAMS
+app.get('/api/phones/:phoneID',(req,res) => {
+    const{phoneID} = req.params;
+    const singleProduct = phones.find((product) => product.id === Number(phoneID));
+
+    if(!singleProduct){
+        res.status(404).send("Product Not Found");
+    }
+
+    res.json(singleProduct);
 })
 
 app.listen(3000, () => {
