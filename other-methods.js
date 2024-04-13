@@ -24,7 +24,33 @@ app.post('/books',(req,res) => {
 
 //PUT Method - works on data updation
 app.put('/books/:id',(req,res) => {
-    const id = 
+    const id = parseInt(req.params.id);
+    const updatedBook = req.body;
+
+    const index = books.findIndex(book => book.id === id);
+
+    if(index !== -1){
+        books[index] = {...books[index], ...updatedBook};
+        res.json(books[index]);
+    }
+    else{
+        res.status(404).json({error:'Book not Found'});
+    }
+})
+
+//DELETE Method - to delete particular data
+app.delete('/books/:id',(req,res) => {
+    const id = parseInt(req.params.id);
+    const index = books.findIndex(book => book.id === id);
+
+    if(index !== -1){
+        const deletedBook = books[index];
+        books.splice(index,1);
+        res.json(deletedBook);
+    }
+    else{
+        res.status(404).json({error:'Book not Found'});
+    }
 })
 
 app.listen(3000, () => {
